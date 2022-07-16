@@ -1,4 +1,4 @@
 # Amazon Prime Clone in Flutter
 
 
-![Screnshot](screenshot.png)
+<img src="screenshot.png" width="300">
