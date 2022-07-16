@@ -1,14 +1,14 @@
-import 'package:amazon_prime_api/componet/tabBarView_home.dart';
+import 'package:amazon_prime_api/screens/home/home_tab.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -32,16 +32,10 @@ class _HomePageState extends State<HomePage> {
         ),
         body: TabBarView(
           children: [
-            TabBarViewHomePage(),
-            Center(
-              child: Text('tab2'),
-            ),
-            Center(
-              child: Text('tab3'),
-            ),
-            Center(
-              child: Text('tab4'),
-            ),
+            HomeTab(),
+            Center(child: Text('tab2')),
+            Center(child: Text('tab3')),
+            Center(child: Text('tab4')),
           ],
         ),
       ),

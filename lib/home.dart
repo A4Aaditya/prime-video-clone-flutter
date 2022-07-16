@@ -1,4 +1,4 @@
-import 'package:amazon_prime_api/page.dart/home_page.dart';
+import 'package:amazon_prime_api/screens/home/home.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -9,8 +9,9 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  final List nav = [
-    HomePage(),
+  int selectedIndex = 0;
+  final List screens = [
+    HomeScreen(),
     Center(
       child: Text('Store'),
     ),
@@ -24,17 +25,17 @@ class _HomeState extends State<Home> {
       child: Text('My Stuff'),
     ),
   ];
-  int _currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: nav[_currentIndex],
+      body: screens[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        currentIndex: _currentIndex,
+        currentIndex: selectedIndex,
         onTap: (value) {
           setState(() {
-            _currentIndex = value;
+            selectedIndex = value;
           });
         },
         selectedItemColor: Colors.blue[500],
